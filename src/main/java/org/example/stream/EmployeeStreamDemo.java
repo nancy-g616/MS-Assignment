@@ -107,7 +107,6 @@ public static void main(String[] args) {
             .sorted(Comparator.comparing(Employee::getFirstName))
             .forEach(System.out::println);
 
-    // 4. Increment salary by 10% in 'IT' department
     System.out.println("\n4. Salaries after 10% increment in IT:");
     employees.stream()
             .filter(e -> e.getDepartment().equalsIgnoreCase("IT"))
@@ -116,13 +115,11 @@ public static void main(String[] args) {
             .filter(e -> e.getDepartment().equalsIgnoreCase("IT"))
             .forEach(System.out::println);
 
-    // 5. 50 odd numbers after 100
     System.out.println("\n5. First 50 odd numbers after 100:");
     Stream.iterate(101, n -> n + 2)
             .limit(50)
             .forEach(System.out::println);
 
-    // 6. Comma-separated first names ordered by date of birth
     System.out.println("\n6. Comma-separated first names by DOB:");
     String namesByDOB = employees.stream()
             .sorted(Comparator.comparing(Employee::getDateOfBirth))
